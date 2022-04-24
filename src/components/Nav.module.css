@@ -1,0 +1,26 @@
+.navbar{
+    margin: 0 40px 0 auto;
+    color: white;
+}
+.navbar ul{
+    display: flex;
+
+}
+.navbar li{
+        
+        margin: 0 10px;
+        list-style: none;
+ 
+}
+.navbar a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: .2s;
+    padding: 5px;
+}
+.navbar a:hover{
+    background-color: rgb(148, 134, 5);
+    border-radius: 5px;
+}

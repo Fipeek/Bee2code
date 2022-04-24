@@ -1,0 +1,45 @@
+.form{
+    width: 1000px;
+    height: 530px;
+    border-radius: 30px;
+    margin: 100px auto;
+    background-color: yellow;
+    padding: 10px;
+    position: relative;
+}
+.form input{
+    width: calc(100% - 20px);
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1.5px solid #000000;
+}
+.form label{
+    width: calc(100% - 20px);
+    margin: 0px 5px;
+    display: block;
+}
+.form button{
+    margin: 25px 10px 0px 5px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border-color: transparent;
+    font-size: 20px;
+}
+.form button:hover{
+    cursor: pointer;
+}
+.form span{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 25px;
+}
+.form span:hover{
+    cursor: pointer;
+}
+.form label:nth-of-type(1){
+    margin-top: 30px;
+}

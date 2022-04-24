@@ -1,0 +1,23 @@
+.patients th{
+    text-align: left;
+    background-color: yellow;
+    padding: 4px 30px 4px 8px;
+    border: 2px solid yellow;
+   
+}
+.patients{
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+.addPatient{
+  font-size: 10px;
+  background-color: black;
+  border: 2px solid black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 10px 0px
+}
+.addPatient:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+/* .patient{
+    color: rgb(65, 63, 63);
+    font-weight: 300;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+.patient h2{
+    font-size: 15px;
+} */
+.patient td{
+    border: 1px solid #e3e3e3;
+    padding: 4px 8px;
+}
+.patient td button{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #e3e3e3;
+    /* border: 0px; */
+}
+.patient div{
+    margin: 0px auto;
+}
