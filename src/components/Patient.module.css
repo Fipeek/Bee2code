@@ -1,13 +1,4 @@
-/* .patient{
-    color: rgb(65, 63, 63);
-    font-weight: 300;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-}
-.patient h2{
-    font-size: 15px;
-} */
+
 .patient td{
     border: 1px solid #e3e3e3;
     padding: 4px 8px;
@@ -20,4 +11,9 @@
 }
 .patient div{
     margin: 0px auto;
+}
+.patient td button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }

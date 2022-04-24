@@ -4,6 +4,6 @@ const PatientContext =  React.createContext({
     patients:[],
     addPatient: (patient) =>{},
     removePatient:(id)=>{},
-    editPatient: (patient)=>{},
+    editPatient: (id,name,city,street,number,apartment)=>{},
 })
 export default PatientContext;

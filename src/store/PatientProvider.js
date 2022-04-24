@@ -2,31 +2,34 @@ import PatientContext from "./patient-context";
 import { useReducer } from "react";
 const DUMMY_PATIENTS = [
     {
-      id:Math.random,
+      id: Math.random(),
       name: "name",
-      lastName: "lastName",
+      lastName: "A",
       city: "miasto",
-      street: "ulica",
-      number: "numer",
+      street: "Pułaskiego",
+      number: "45",
       apartment: "apartament",
+      projectName: ""
     },
     {
-      id:Math.random,
+      id: Math.random(),
       name: "name2",
-      lastName: "lastName",
+      lastName: "G",
       city: "miasto",
-      street: "ulica",
-      number: "numer",
+      street: "Transprotowa",
+      number: "32",
       apartment: "apartament",
+      projectName: ""
     },
     {
-      id:Math.random,
+      id: Math.random(),
       name: "name5",
-      lastName: "lastName",
+      lastName: "C",
       city: "miasto",
-      street: "ulica",
-      number: "numer",
+      street: "szybka",
+      number: "31",
       apartment: "apartament",
+      projectName: ""
     },
   ];
   const defaultPatientState = {
@@ -40,11 +43,29 @@ const DUMMY_PATIENTS = [
         }
       }
       if(action.type === "REMOVE_PATIENT"){
-       
-          let updatedPatients = state.patients.filter(patient=> patient.id !== action.id);
+          const updatedPatients = state.patients.filter(item => item.id !== action.id);
           return{
             patients: updatedPatients,
         }
+      }
+      if(action.type === "EDIT_PATIENT"){
+        
+      let updatedPatients = state.patients;
+      console.log(action.apartment);
+      const patientIndex = state.patients.findIndex(
+        (patient) => patient.id === action.id
+      );      
+      console.log(patientIndex);
+      updatedPatients[patientIndex].name = action.name;  
+      updatedPatients[patientIndex].lastName = action.lastName;  
+      updatedPatients[patientIndex].city = action.city;  
+      updatedPatients[patientIndex].street = action.street;  
+      updatedPatients[patientIndex].number = action.number;  
+      updatedPatients[patientIndex].apartment = action.apartment;
+      console.log(updatedPatients);
+      return {
+        patients: updatedPatients,
+      };
       }
       return defaultPatientState;
   };
@@ -55,11 +76,13 @@ const PatientProvider = (props) => {
        dispatchPatientAction({type: "ADD_PATIENT", patient: patient})
    };
 
-   const removePatientHandler = id =>{
-     dispatchPatientAction({type: "REMOVE_PATIENT", id: id})
+   const removePatientHandler = (id) =>{
+     dispatchPatientAction({type: "REMOVE_PATIENT", id:id});
    };
 
-   const editPatientHandler = patient =>{};
+   const editPatientHandler = (id,name,lastName,city,street,number,apartment) =>{
+     dispatchPatientAction({type: "EDIT_PATIENT", id:id, name:name, lastName:lastName, city:city, street:street, number:number, apartment:apartment,});
+   };
 
     const patientContext = {
         patients: patientState.patients,
