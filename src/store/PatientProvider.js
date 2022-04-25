@@ -9,7 +9,7 @@ const DUMMY_PATIENTS = [
       street: "Pułaskiego",
       number: "45",
       apartment: "apartament",
-      projectName: ""
+    
     },
     {
       id: Math.random(),
@@ -19,7 +19,7 @@ const DUMMY_PATIENTS = [
       street: "Transprotowa",
       number: "32",
       apartment: "apartament",
-      projectName: ""
+    
     },
     {
       id: Math.random(),
@@ -29,7 +29,7 @@ const DUMMY_PATIENTS = [
       street: "szybka",
       number: "31",
       apartment: "apartament",
-      projectName: ""
+    
     },
   ];
   const defaultPatientState = {
@@ -43,7 +43,7 @@ const DUMMY_PATIENTS = [
         }
       }
       if(action.type === "REMOVE_PATIENT"){
-          const updatedPatients = state.patients.filter(item => item.id !== action.id);
+          const updatedPatients = state.patients.filter(patient => patient.id !== action.id);
           return{
             patients: updatedPatients,
         }
@@ -51,18 +51,15 @@ const DUMMY_PATIENTS = [
       if(action.type === "EDIT_PATIENT"){
         
       let updatedPatients = state.patients;
-      console.log(action.apartment);
       const patientIndex = state.patients.findIndex(
         (patient) => patient.id === action.id
       );      
-      console.log(patientIndex);
       updatedPatients[patientIndex].name = action.name;  
       updatedPatients[patientIndex].lastName = action.lastName;  
       updatedPatients[patientIndex].city = action.city;  
       updatedPatients[patientIndex].street = action.street;  
       updatedPatients[patientIndex].number = action.number;  
       updatedPatients[patientIndex].apartment = action.apartment;
-      console.log(updatedPatients);
       return {
         patients: updatedPatients,
       };

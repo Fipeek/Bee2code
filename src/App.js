@@ -6,8 +6,12 @@ import Patient from "./components/Patient";
 import PatientProvider from "./store/PatientProvider";
 import Patients from "./components/Patients";
 import './components/reset.css';
+import ProjectProvider from "./store/ProjectProvider";
+import Projects from "./components/Projects";
 function App() {
   return (
+    <ProjectProvider>
+
     <PatientProvider>
       <Header />
       <Route path="/Pacjenci">
@@ -15,8 +19,10 @@ function App() {
       </Route>
       <Route path="/Projekty">
         <div>Projekty</div>
+        <Projects></Projects>
       </Route>
     </PatientProvider>
+    </ProjectProvider>
   );
 }
 
