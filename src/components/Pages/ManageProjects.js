@@ -19,7 +19,6 @@ const ManageProjects = () => {
     setIsError(false);
   };
   if (projectCtx.projects.length > 0) {
-    console.log("xddd");
     firstProject = projectCtx.projects[0].name;
   }
   const [selectedProject, setSelectedProject] = useState(firstProject);

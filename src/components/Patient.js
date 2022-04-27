@@ -4,6 +4,8 @@ import react, { useState } from "react";
 import { useContext } from "react";
 import AddPatientForm from "./AddPatientForm";
 import Backdrop from "./UI/Backdrop";
+import ReactDOM from "react-dom";
+
 const Patient = (props) => {
   const patientCtx = useContext(PatientContext);
   const [isEditingPatient, setIsEditingPatient] = useState(false);
@@ -26,18 +28,21 @@ const Patient = (props) => {
       <td>
         <button onClick={removePatientHandler}>delete</button>{" "}
         <button onClick={editPatient}>edit</button>
-        {isEditingPatient && <Backdrop>
-          <AddPatientForm
-            name={props.name}
-            lastName={props.lastName}
-            city={props.city}
-            street={props.street}
-            number={props.number}
-            apartment={props.apartment}
-            onClick={editPatient}
-            patientID={id}
-          ></AddPatientForm>
-        </Backdrop>}
+        {ReactDOM.createPortal(
+             isEditingPatient && <Backdrop>
+              <AddPatientForm
+                name={props.name}
+                lastName={props.lastName}
+                city={props.city}
+                street={props.street}
+                number={props.number}
+                apartment={props.apartment}
+                onClick={editPatient}
+                patientID={id}
+              ></AddPatientForm>
+            </Backdrop>,document.getElementById('backdrop')
+        )}
+       
       </td>
     </tr>
   );
