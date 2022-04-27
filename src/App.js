@@ -13,7 +13,7 @@ import TestsPage from "./components/Pages/TestsPage";
 import TestProvider from "./store/TestProvider";
 import Summary from "./components/Pages/Summary";
 import ErrorModal from "./components/ErrorModal";
-import ManagePatients from "./components/Pages/ManagePatients";
+import ManagePatients from "./components/Pages/managePatients";
 import { Redirect } from "react-router-dom";
 function App() {
   return (
