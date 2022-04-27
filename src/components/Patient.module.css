@@ -17,3 +17,9 @@
     color: white;
     cursor: pointer;
 }
+.negative{
+    color: red;
+}
+.positive{
+    color: green;
+}

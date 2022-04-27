@@ -6,8 +6,8 @@ const Nav = () => {
         <ul>
             <li><Link to='/Pacjenci'>Pacjenci</Link></li>
             <li><Link to="/Projekty">Projekty</Link></li>
-            <li><Link></Link></li>
-            <li><Link></Link></li>
+            <li><Link to="/zarzadzanieProjektami">zarzadzanieProjektami</Link></li>
+            <li><Link to='./testy'>testy </Link></li>
         </ul>
     </nav> );
 }

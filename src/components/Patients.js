@@ -24,7 +24,6 @@ const Patients = () => {
   }
   const searchFieldChangeHandler = event =>{
     setSearchField(event.target.value);
-    console.log(searchField)
   }
   patientCtx.patients.sort(function(a,b){
     if(sortType==='ascending'){
@@ -97,15 +96,6 @@ const Patients = () => {
         return patient;
       }
     }
-
-
-
-    // if(searchTerm== ""){
-    //   return patient;
-    // }
-    // else if(patient.lastName.toLowerCase().includes(searchTerm.toLowerCase())){
-    //   return patient;
-    // }
   }).map((patient) => (
     <Patient
       id={patient.id}
