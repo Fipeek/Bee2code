@@ -4,7 +4,7 @@ Aplikacja została wykonana za pomocą biblioteki React (zakładam, że użytkow
 # Dane testowe
 W aplikacji domyślnie wpisani są 3 pacjenci oraz 3 projekty. 
 # Obsługa strony 
-Strona składa się z 5 podstron. Strona Pacjenci zawiera informacje o pacjentach oraz możliwości ich edycji + sortowanie i wyszukiwanie danych. Strona projekty analogicznie. zarzadzaniePacjentami odpowiada za dodawanie/usuwanie pacjentów do projektu z listy. Zgode pacjenta możemy zmienić za pomocą kliknięcia na daną zgode pacjenta. Widok testy umożliwia dodwanie testów dla danych pacjentów w ramach projektu oraz sortowanie danych. Widok podsumowanie zawiera ilość pacjentów, projektów oraz testów w systemie
+Strona składa się z 5 podstron. Strona Pacjenci zawiera informacje o pacjentach oraz możliwości ich edycji + sortowanie i wyszukiwanie danych. Strona projekty analogicznie. zarzadzaniePacjentami odpowiada za dodawanie/usuwanie pacjentów do projektu z listy. Zgode pacjenta możemy zmienić za pomocą kliknięcia na daną zgode pacjenta. Widok testy umożliwia dodwanie testów dla danych pacjentów (tylko tych, którzy udzielili zgode) w ramach projektu oraz sortowanie danych. Widok podsumowanie zawiera ilość pacjentów, projektów oraz testów w systemie
 # Uruchomienie
 Po sklonowaniu repozytorium używamy komendy 
 ### 'npm install'
