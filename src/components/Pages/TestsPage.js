@@ -5,6 +5,8 @@ import TestForm from '../TestForm';
 import Backdrop from '../UI/Backdrop';
 import SelectProject from '../SelectProject';
 import ProjectContext from '../../store/project-context';
+import styles from '../Select.module.css';
+import styles2 from '../TestsPage.module.css';
 const TestsPage = () => {
     const [isAdding,setIsAdding] = useState(false);
     const [filteredProjectName,setFilteredProjectName] = useState('');
@@ -24,14 +26,15 @@ const TestsPage = () => {
     name={project.name}
     ></SelectProject>))
     return ( 
-      <div>
-        <select onChange={filteredProjectNameHandler}>
-          <option  selected>Choose Project</option>
+      <div  className={styles2.testsPage}>
+        
+        <select className={styles.select} onChange={filteredProjectNameHandler}>
+          <option  selected value="">Choose Project</option>
           {projects}
         </select>
         <Tests projectName={filteredProjectName}></Tests>
-        <AddTestButton onClick={setIsAddingHandler}></AddTestButton>
       {isAdding && <Backdrop> <TestForm onClick={setIsAddingHandler}></TestForm></Backdrop>}
+        <AddTestButton onClick={setIsAddingHandler}></AddTestButton>
       </div>
       );
 }

@@ -2,7 +2,7 @@ import react from "react";
 import Patient from "./Patient";
 import { useContext } from "react";
 import PatientContext from "../store/patient-context";
-import styles from './Patients.module.css';
+import styles from './Patients.module.css'; 
 import { Fragment } from "react";
 import { useState } from "react";
 import AddPatientForm from "./AddPatientForm";
@@ -114,10 +114,14 @@ const Patients = () => {
     { isAdding && <Backdrop>
       <AddPatientForm onClick={setIsAddingHandler}></AddPatientForm>
       </Backdrop>}
+      <div className={styles.sort}>
+
+      <label>Sort By Last name</label>
       <select onChange={filterChangeHandler}>
         <option value="ascending">ascending</option>
         <option value="descending">descending</option>
       </select>
+      <label>Choose Field for search</label>
       <select onChange={searchFieldChangeHandler}>
         <option value="name">name</option>
         <option value="lastName">LastName</option>
@@ -126,15 +130,19 @@ const Patients = () => {
         <option value="number">Number</option>
         <option value="apartment">Apartment</option>
       </select>
+      <div>
 
+      <label>Search Term: </label>
       <input onChange={ (event) =>{
         setSearchTerm(event.target.value);
       }}></input>
+      </div>
+      </div>
   <table className={styles.patients}>
     <tr>
-      <th>Imie</th>
-      <th>Nazwisko</th>
-      <th>Miasto</th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>City</th>
       <th>Street</th>
       <th>Number</th>
       <th>Aparatment</th>

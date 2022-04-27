@@ -67,19 +67,26 @@ const Projects = () => {
 
     return (
       <div>
+        <div className={styles.sort}>
+        
+      <label> Sort By Project Name </label>
       <select onChange={filterChangeHandler}>
         <option value="ascending">ascending</option>
         <option value="descending">descending</option>
       </select>
-
+      <label>Choose Field for search</label>
       <select onChange={searchFieldChangeHandler}>
         <option value="name">name</option>
         <option value="description">description</option>
       </select>
+      <div>
 
+      <label>Search Term: </label>
       <input onChange={ (event) =>{
         setSearchTerm(event.target.value);
       }}></input>
+      </div>
+      </div>
         <table className={styles.patients}>
         <tr>
           <th>Name</th>

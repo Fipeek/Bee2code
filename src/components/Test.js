@@ -16,6 +16,12 @@ const Test = (props) => {
   };
   const project = props.project;
   const patient = props.patient;
+
+  if(patient===undefined){
+    return (<div>
+      
+    </div>)
+  }
   const test = {
     id: props.id,
     name: props.name,

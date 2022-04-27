@@ -16,9 +16,9 @@ const PatientsInProject = (props) => {
 
     </PatientInProject>)
     return ( <table className={styles.patients}>
-        <th>Imie</th>
-      <th>Nazwisko</th>
-      <th>Miasto</th>
+        <th>Name</th>
+      <th>Last Name</th>
+      <th>Street</th>
       <th>Street</th>
       <th>Number</th>
       <th>Aparatment</th>

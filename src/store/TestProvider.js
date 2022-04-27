@@ -1,58 +1,5 @@
 import { useReducer } from "react";
 import TestContext from "./test-contex";
-const DUMMY_PATIENT = {
-  id: 1,
-  name: "name",
-  lastName: "A",
-  city: "miasto",
-  street: "Pułaskiego",
-  number: "45",
-  apartment: "apartament",
-  consent: true,
-};
-const DUMMY_PROJECT = {
-  id: 3,
-  name: "test3",
-  description: "projektu",
-  numberOfPatients: 0,
-  patients: [{ DUMMY_PATIENT }],
-};
-const DUMMY_PROJECT2 = {
-  id: 2,
-  name: "test2",
-  description: "projektu",
-  numberOfPatients: 0,
-  patients: [{ DUMMY_PATIENT }],
-};
-const DUMMY_TESTS = [
-  {
-    id: 1,
-    name: "test",
-    patient: DUMMY_PATIENT,
-    project: DUMMY_PROJECT,
-    description: "xd",
-    result: "rez",
-    done: false,
-  },
-  {
-    id: 2,
-    name: "test",
-    patient: DUMMY_PATIENT,
-    project: DUMMY_PROJECT2,
-    description: "xd",
-    result: "rez",
-    done: false,
-  },
-  {
-    id: 3,
-    name: "test",
-    patient: DUMMY_PATIENT,
-    project: DUMMY_PROJECT,
-    description: "xd",
-    result: "rez",
-    done: false,
-  },
-];
 
 const defaultTestsState = {
   tests: [],

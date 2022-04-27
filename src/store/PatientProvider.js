@@ -3,32 +3,32 @@ import { useReducer } from "react";
 const DUMMY_PATIENTS = [
   {
     id: 1,
-    name: "name",
-    lastName: "A",
-    city: "miasto",
+    name: "Filip",
+    lastName: "Nowak",
+    city: "Bialystok",
     street: "Pułaskiego",
     number: "45",
-    apartment: "apartament",
+    apartment: "15",
     consent: true,
   },
   {
     id: 2,
-    name: "name2",
-    lastName: "G",
-    city: "miasto",
+    name: "Adam",
+    lastName: "Nowacki",
+    city: "Wrocław",
     street: "Transprotowa",
     number: "32",
-    apartment: "apartament",
+    apartment: "23",
     consent: true,
   },
   {
     id: 3,
-    name: "name5",
-    lastName: "C",
-    city: "miasto",
+    name: "Piotr",
+    lastName: "Kowalski",
+    city: "Warszawa",
     street: "szybka",
     number: "31",
-    apartment: "apartament",
+    apartment: "12",
     consent: true,
   },
 ];
@@ -70,7 +70,7 @@ const patientReducer = (state, action) => {
     const patientIndex = state.patients.findIndex(
       (patient) => patient.id === action.id
       );
-      console.log(updatedPatients[patientIndex]);
+     
     updatedPatients[patientIndex].consent =
       action.consent;
     return {

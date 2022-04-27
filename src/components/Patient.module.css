@@ -13,8 +13,6 @@
     margin: 0px auto;
 }
 .patient td button:hover{
-    background-color: black;
-    color: white;
     cursor: pointer;
 }
 .negative{

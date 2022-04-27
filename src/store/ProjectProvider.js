@@ -1,47 +1,25 @@
 import ProjectContext from "./project-context";
 import react from "react";
 import { useReducer } from "react";
-const DUMMY_PATIENTS = [
-  {
-    id: 1,
-    name: "name",
-    lastName: "A",
-    city: "miasto",
-    street: "Pułaskiego",
-    number: "45",
-    apartment: "apartament",
-    consent: true,
-  },
-  {
-    id: 2,
-    name: "name2",
-    lastName: "G",
-    city: "miasto",
-    street: "Transprotowa",
-    number: "32",
-    apartment: "apartament",
-    consent: false,
-  },
-];
 const DUMMY_PROJECTS = [
   {
     id: 1,
-    name: "tutaj",
-    description: "testowy ",
+    name: "Morfologia",
+    description: "Badanie kriw ",
     numberOfPatients: 0,
     patients: [],
   },
   {
     id: 2,
-    name: "test2",
-    description: "opis",
+    name: "Echo serca",
+    description: "Badanie serca",
     numberOfPatients: 0,
     patients: [],
   },
   {
     id: 3,
-    name: "test3",
-    description: "projektu",
+    name: "Tomografia Głowy",
+    description: "Badanie głowy",
     numberOfPatients: 0,
     patients: [],
   },
@@ -92,7 +70,6 @@ const projectReducer = (state, action) => {
     };
   }
   if(action.type === "ADD_PATIENT_TO_PROJECT"){
-    console.log('xdddd');
     const projectIndex = state.projects.findIndex(
         (project) => project.id === action.projectID
       );

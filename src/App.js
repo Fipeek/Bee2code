@@ -11,6 +11,10 @@ import Projects from "./components/Projects";
 import ManageProjects from "./components/Pages/ManageProjects";
 import TestsPage from "./components/Pages/TestsPage";
 import TestProvider from "./store/TestProvider";
+import Summary from "./components/Pages/Summary";
+import ErrorModal from "./components/ErrorModal";
+import ManagePatients from "./components/Pages/ManagePatients";
+import { Redirect } from "react-router-dom";
 function App() {
   return (
     <TestProvider>
@@ -18,11 +22,14 @@ function App() {
     <ProjectProvider>
       <PatientProvider>
         <Header />
+        <Route path='/'>
+          <Redirect to="./Pacjenci"></Redirect>
+        </Route>
         <Route path="/Pacjenci">
-          <Patients></Patients>
+
+          <ManagePatients></ManagePatients>
         </Route>
         <Route path="/Projekty">
-          <div>Projekty</div>
           <Projects></Projects>
         </Route>
         <Route path="/zarzadzanieProjektami">
@@ -30,6 +37,9 @@ function App() {
         </Route>
         <Route path="/testy">
           <TestsPage></TestsPage>
+        </Route>
+        <Route path='/summary'>
+      <Summary></Summary>
         </Route>
       </PatientProvider>
     </ProjectProvider>

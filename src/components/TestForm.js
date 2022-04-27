@@ -5,6 +5,7 @@ import SelectProject from "./SelectProject";
 import SelectPatient from "./SelectPatient";
 import TestContext from "../store/test-contex";
 import PatientContext from "../store/patient-context";
+import ErrorModal from "./ErrorModal";
 const TestForm = (props) => {
   const nameInputRef = useRef();
   const descriptionInputRef = useRef();
@@ -16,6 +17,7 @@ const TestForm = (props) => {
   const projectCtx = useContext(ProjectContext);
   const patientCtx = useContext(PatientContext);
   const [isTestDone, setIsTestDone] = useState(true);
+
   let firstProjectName ="";
   if(projectCtx.projects.length>0){
     firstProjectName=projectCtx.projects[0].name;
@@ -33,10 +35,7 @@ const TestForm = (props) => {
   }
   if(patientCtx.patients.length === 0 ) {
       return (
-          <div>
-              <h1>no patients yet add some :D</h1>
-              <span>X</span>
-          </div>
+       <ErrorModal errorMessage={"No pacient detected, add some"} onClick={props.onClick}></ErrorModal>
       )
   }
   const testStateHandler = (event) => {
@@ -80,7 +79,8 @@ const TestForm = (props) => {
     else{
       result=resultInputRef.current.value;
     }
-    if (props.id == undefined) {
+    if(result.trim().length === 0 ||  nameInputRef.current.value.trim().length !== 0 || patients[0]===undefined || descriptionInputRef.current.value.trim().length !== 0){
+      if (props.id == undefined) {
       const test = {
         id: Math.random(),
         name: nameInputRef.current.value,
@@ -90,8 +90,13 @@ const TestForm = (props) => {
         result: result,
         done: true,
       };
-      testCtx.addTest(test);
-    } else {
+      if(patients[0] !== undefined){
+       
+
+        testCtx.addTest(test);
+      }
+    } 
+    else {
       const test = {
         id: props.id,
         name: nameInputRef.current.value,
@@ -103,6 +108,8 @@ const TestForm = (props) => {
       };
       testCtx.editTest(props.id, test, test.project, test.patient);
     }
+    
+  }
   };
 
   return (
@@ -115,6 +122,7 @@ const TestForm = (props) => {
       {isTestDone && (
         <input defaultValue={props.result} ref={resultInputRef}></input>
       )}
+      <label>select project name</label>
       <select
         defaultValue={props.projectName}
         onChange={selectedProjectHandler}
@@ -122,12 +130,14 @@ const TestForm = (props) => {
       >
         {projects}
       </select>
+      <label>Select patient</label>
       <select
         defaultValue={props.patientName + " " + props.patientLastName}
         ref={patientInputRef}
       >
         {patients}
       </select>
+      <label>is test done</label>
       <select
         defaultValue={props.testState}
         onChange={testStateHandler}

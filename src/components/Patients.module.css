@@ -21,3 +21,20 @@
 .addPatient:hover{
     cursor: pointer;
 }
+ .sort{
+     margin: 50px;
+   text-align: center;
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+}
+.sort label{
+    margin: 10px 0px 5px 0px;
+    font-size: 20px;
+}
+.sort select{
+    width: 30%;
+}
+.sort div{
+    margin: 10px;
+}
