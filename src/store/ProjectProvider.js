@@ -28,14 +28,14 @@ const DUMMY_PROJECTS = [
     id: 1,
     name: "tutaj",
     description: "testowy ",
-    numberOfPatients: 2,
+    numberOfPatients: 0,
     patients: [],
   },
   {
     id: 2,
     name: "test2",
     description: "opis",
-    numberOfPatients: 2,
+    numberOfPatients: 0,
     patients: [],
   },
   {

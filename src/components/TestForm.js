@@ -16,9 +16,29 @@ const TestForm = (props) => {
   const projectCtx = useContext(ProjectContext);
   const patientCtx = useContext(PatientContext);
   const [isTestDone, setIsTestDone] = useState(true);
+  let firstProjectName ="";
+  if(projectCtx.projects.length>0){
+    firstProjectName=projectCtx.projects[0].name;
+  }
   const [selectedProject, setSelectedProject] = useState(
-    projectCtx.projects[0].name
+    firstProjectName
   );
+  if(projectCtx.projects.length === 0 ){
+      return(
+
+          <div> 
+          <h1>No projects yet, add some :((</h1>
+      </div>
+          ) 
+  }
+  if(patientCtx.patients.length === 0 ) {
+      return (
+          <div>
+              <h1>no patients yet add some :D</h1>
+              <span>X</span>
+          </div>
+      )
+  }
   const testStateHandler = (event) => {
     if (event.target.value === "true") {
       setIsTestDone(true);
@@ -86,7 +106,7 @@ const TestForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler} className={styles.form}>
+        <form onSubmit={submitHandler} className={styles.form}>
       <label>Name</label>
       <input defaultValue={props.name} ref={nameInputRef}></input>
       <label>description</label>

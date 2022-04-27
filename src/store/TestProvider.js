@@ -55,7 +55,7 @@ const DUMMY_TESTS = [
 ];
 
 const defaultTestsState = {
-  tests: DUMMY_TESTS,
+  tests: [],
 };
 const testReducer = (state, action) => {
   if (action.type === "ADD_TEST") {
